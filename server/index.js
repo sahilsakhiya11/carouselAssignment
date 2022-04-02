@@ -54,7 +54,7 @@ app.get("/api/:choice", (req, res) => {
   res.set("Cache-control", "no-cache");
 
   switch (req.params.choice) {
-    case "images":
+    case "inital":
       res.send(shuffle([...sharksList, ...catsList]));
       break;
     case "cats":

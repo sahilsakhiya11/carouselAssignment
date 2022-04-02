@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MenuButton = ({ name }) => {
+const MenuButton = ({ name, active, handleClick }) => {
   return (
     <>
       <button>{name}</button>
@@ -11,6 +11,9 @@ const MenuButton = ({ name }) => {
 
 MenuButton.propTypes = {
   name: PropTypes.string,
+  active= PropTypes.bool,
+  handleClick = PropTypes.func  
+
 };
 
 export default MenuButton;
