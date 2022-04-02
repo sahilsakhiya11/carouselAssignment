@@ -14,6 +14,16 @@ const Home = () => {
     shwShark || showCat ? fetchData() : initialData();
   }, [showShark, showCat]);
 
+  const sharkClick = (e) => {
+    e.preventDefault();
+    setShowShark(!showShark);
+  };
+
+  const catClick = (e) => {
+    e.preventDefault();
+    setShowCat(!showCat);
+  };
+
   const fetchData = () => {
     const para =
       showShark && showCat ? "initial" : showShark ? "sharks" : "cats";
