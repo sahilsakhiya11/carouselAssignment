@@ -1,8 +1,14 @@
 import React from 'react'
+import MenuButton from '../components/MenuButton';
 
 const Home = () => {
     return(
-        <h1>Home Page</h1>
+        <div className="container">
+            <div className="buttonContainer">
+                <MenuButton name="Cat" />
+                <MenuButton name="Shark" />
+            </div>
+        </div>
     )
 }
 
