@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const MenuButton = ({ name, active, handleClick }) => {
   return (
     <>
-      <button>{name}</button>
+      <button onClick={handleClick} className={active? "btn active": "btn"}>{name}</button>
     </>
   );
 };

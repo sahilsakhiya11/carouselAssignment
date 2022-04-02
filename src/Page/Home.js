@@ -1,6 +1,6 @@
-import res from "express/lib/response";
 import React, { useState, useEffect } from "react";
-import MenuButton from "../components/MenuButton";
+import Carousel from '../components/Carousel/Carousel.component'
+import MenuButton from "../components/Button/MenuButton.component";
 
 const Home = () => {
   const [showShark, setShowShark] = useState(false);
