@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Carousel from '../components/Carousel/Carousel.component'
+import Carousel from "../components/Carousel/Carousel.component";
 import MenuButton from "../components/Button/MenuButton.component";
 
-
 export const DataContext = React.createContext({
-    data: null,
-    isFetching: false
-})
+  data: null,
+  isFetching: false,
+});
 
 const Home = () => {
   const [showShark, setShowShark] = useState(false);
@@ -69,9 +68,9 @@ const Home = () => {
         <MenuButton name="Shark" active={showShark} handleClick={sharkClick} />
       </div>
       <div>
-          <DataContext.Provider value={setShowImages}>
-              <Carousel />
-          </DataContext.Provider>
+        <DataContext.Provider value={setShowImages}>
+          <Carousel />
+        </DataContext.Provider>
       </div>
     </div>
   );
