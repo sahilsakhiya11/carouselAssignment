@@ -8,13 +8,13 @@ const devConfig = () => ({
   mode: 'development',
   devtool: "inline-source-map",
   devServer: {
-    contentBase: './dist',
+    contentBase: './bundle',
     hot: true,
     open: true,
     historyApiFallback: true
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../bundle'),
     filename: '[name].bundle.js',
   },
   module: {

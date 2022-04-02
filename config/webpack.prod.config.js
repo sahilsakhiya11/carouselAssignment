@@ -10,7 +10,7 @@ const baseConfig = require('./webpack.base.config');
 const prodConfig = () => ({
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../bundle'),
     filename: '[name].bundle.js',
   },
   optimization: {
