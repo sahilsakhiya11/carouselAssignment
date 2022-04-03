@@ -3,13 +3,14 @@ import Carousel from "../components/Carousel/Carousel.component";
 import MenuButton from "../components/Button/MenuButton.component";
 import './Home.styles.css'
 
-
+// Creating a context to store data 
 export const DataContext = React.createContext({
   data: null,
   isFetching: false,
 });
 
 const Home = () => {
+  // UseState
   const [showShark, setShowShark] = useState(false);
   const [showCat, setShowCat] = useState(false);
   const [showImages, setShowImages] = useState({
@@ -21,6 +22,15 @@ const Home = () => {
     showShark || showCat ? fetchData() : initialData();
   }, [showShark, showCat]);
 
+
+  const initialData = () => {
+    setShowImages({
+      isFetching: false,
+      data: null,
+    });
+  };
+
+  
   const sharkClick = (e) => {
     e.preventDefault();
     setShowShark(!showShark);
@@ -58,13 +68,7 @@ const Home = () => {
       });
   };
 
-  const initialData = () => {
-    setShowImages({
-      isFetching: false,
-      data: null,
-    });
-  };
-
+  
   console.log(showImages)
   return (
     <div className="container">

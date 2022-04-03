@@ -10,6 +10,7 @@ const MenuButton = ({ name, active, handleClick }) => {
   );
 };
 
+// Validating Prop
 MenuButton.propTypes = {
   name: PropTypes.string,
   active: PropTypes.bool,
