@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "../components/Carousel/Carousel.component";
 import MenuButton from "../components/Button/MenuButton.component";
+import './Home.styles.css'
+
 
 export const DataContext = React.createContext({
   data: null,
@@ -16,7 +18,7 @@ const Home = () => {
   });
 
   useEffect(() => {
-    shwShark || showCat ? fetchData() : initialData();
+    showShark || showCat ? fetchData() : initialData();
   }, [showShark, showCat]);
 
   const sharkClick = (e) => {
@@ -31,20 +33,21 @@ const Home = () => {
 
   const fetchData = () => {
     const para =
-      showShark && showCat ? "initial" : showShark ? "sharks" : "cats";
+      showShark && showCat ? "both" : (showShark ? "sharks" : "cats");
 
     setShowImages({
       isFetching: true,
       data: null,
     });
 
-    fetch(`https://localhost:3000/api/${para}`)
+    fetch(`http://localhost:3000/api/${para}`)
       .then((result) => result.json())
-      .then((data) => {
+      .then((response) => {
         setShowImages({
-          data: data,
           isFetching: false,
+          data: response,
         });
+        console.log(response)
       })
       .catch((err) => {
         console.log(err);
@@ -61,17 +64,17 @@ const Home = () => {
       data: null,
     });
   };
+
+  console.log(showImages)
   return (
     <div className="container">
       <div className="buttonContainer">
         <MenuButton name="Cat" active={showCat} handleClick={catClick} />
         <MenuButton name="Shark" active={showShark} handleClick={sharkClick} />
       </div>
-      <div>
-        <DataContext.Provider value={setShowImages}>
+        <DataContext.Provider value={showImages}>
           <Carousel />
         </DataContext.Provider>
-      </div>
     </div>
   );
 };

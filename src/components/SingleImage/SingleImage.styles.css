@@ -1,0 +1,18 @@
+.singleImage {
+  width: 700px;
+  height: 400px;
+}
+.loadingContainer {
+  margin-top: 200px;
+  margin-left: 340px;
+}
+
+img.imageContainer {
+  width: 700px;
+  height: 400px;
+}
+ 
+img.portfolioImage{
+  width: 700px;
+  height: 400px;
+}

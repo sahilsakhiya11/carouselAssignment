@@ -4,13 +4,14 @@
   "description": "Cat and Shark Carousel Assignment",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development --config config/webpack.dev.config.js --open",
-    "build": "node server",
+    "start:client": "webpack serve --mode development --config config/webpack.dev.config.js --open",
+    "start:server": "node server",
     "prebuild": "webpack --mode production --config config/webpack.prod.config.js --progress"
   },
   "author": "Sahil Patel",
   "license": "ISC",
   "dependencies": {
+    "clsx": "^1.1.1",
     "express": "^4.17.1",
     "jest": "^26.6.3",
     "normalize.css": "^8.0.1",

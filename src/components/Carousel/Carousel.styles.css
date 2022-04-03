@@ -1,0 +1,98 @@
+.carouselContainer {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.prevButton:hover {
+  border-top-color: #3c096c;
+  border-left-color: #3c096c;
+}
+
+.prevButton:disabled {
+  cursor: not-allowed;
+  border-top-color: #efefef;
+  border-left-color: #efefef;
+}
+
+.nextButton {
+  display: block;
+  padding: 0;
+  margin: 0 1rem;
+  height: 50px;
+  width: 50px;
+  background-color: #fff;
+  border: none;
+  border-top: 0.5rem solid #5f3dc8;
+  border-right: 0.5rem solid #5f3dc8;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.nextButton:hover {
+  border-top-color: #3c096c;
+  border-right-color: #3c096c;
+}
+
+.nextButton:disabled {
+  cursor: not-allowed;
+  border-top: 0.5rem solid #efefef;
+  border-right: 0.5rem solid #efefef;
+}
+
+.prevButtons {
+  background: #1e222e;
+  border: none;
+  color: white;
+  font-size: 50px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  margin-right: -8px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.prevButtons:hover {
+  background-color: #363747;
+}
+
+.prevButtons:disabled {
+  cursor: not-allowed;
+  background-color: #161725;
+  color: #3f3f41;
+}
+
+.nextButtons {
+  background: #1e222e;
+  border: none;
+  color: white;
+  font-size: 50px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  margin-right: -8px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.nextButtons:hover {
+  background-color: #363747;
+}
+
+.nextButtons:disabled {
+  cursor: not-allowed;
+  background-color: #161725;
+  color: #3f3f41;
+}
+.imageContainer {
+  width: 700px;
+  height: 500px;
+  text-align: center;
+  margin: 0 3rem;
+  border: 1px solid #efefef;
+}

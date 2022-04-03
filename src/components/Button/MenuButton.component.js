@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './MenuButton.styles.css'
 
 const MenuButton = ({ name, active, handleClick }) => {
   return (
@@ -11,9 +12,8 @@ const MenuButton = ({ name, active, handleClick }) => {
 
 MenuButton.propTypes = {
   name: PropTypes.string,
-  active= PropTypes.bool,
-  handleClick = PropTypes.func  
-
+  active: PropTypes.bool,
+  handleClick: PropTypes.func  
 };
 
 export default MenuButton;

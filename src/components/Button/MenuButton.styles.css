@@ -1,0 +1,30 @@
+.btn {
+  color: #fff;
+  padding: 15px 50px;
+  font-size: 28px;
+  font-weight: 400;
+  font-family: SuisseIntl, Helvetica, Arial, sans-serif;
+  border-color: #e7131a;
+  border-width: 2px;
+  border-radius: 40px;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  text-decoration: none;
+  background-color: #e7131a;
+}
+
+.btn:hover {
+  color: #fff;
+  box-shadow: none;
+  border-color: #bb0000;
+  border-width: 2px;
+  text-decoration: none;
+  background-color: #bb0000;
+  cursor: pointer;
+}
+
+.btn.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}

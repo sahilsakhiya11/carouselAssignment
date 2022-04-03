@@ -1,0 +1,14 @@
+div.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #161725;
+    min-height: 100vh;
+}
+
+div.buttonContainer{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 30px;
+}
