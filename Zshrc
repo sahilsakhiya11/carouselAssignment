@@ -1,0 +1,113 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export ZSH="/Users/mtkachuk/.oh-my-zsh"
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
+ZSH_THEME="passion"
+
+plugins=(
+git
+bundler
+macOS
+rake
+zsh-autosuggestions
+last-working-dir
+web-search
+extract
+history
+sudo
+yarn
+)
+source $ZSH/oh-my-zsh.sh
+source /Users/mtkachuk/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# z extension for browsing
+source  /Users/mtkachuk/zsh-z/zsh-z.plugin.zsh
+
+# My Awesome Aliases  
+# GIT
+function gc { git commit -m "$@"; }
+alias gcd="git checkout develop"
+# Removed duplicate gcm alias
+alias gs="git status";
+alias gpull="git pull";
+alias gf="git fetch origin"; # Removed duplicate gf alias
+alias gfa="git fetch --all";
+alias gpush="git push";
+alias gd="git diff";
+alias ga="git add .";
+alias gb="git branch";
+alias gbr="git branch -r"
+alias gfr="git remote update"
+alias gbn="git checkout -B "
+alias grf="git reflog";
+alias grh="git reset HEAD~" # last commit
+alias gac="git add . && git commit -a -m "
+alias gsu="git push --set-upstream origin "
+alias prune-git="git fetch --prune && git branch -r | awk '{print \$1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print \$1}' | xargs git branch -d"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
+alias gcp="git checkout @{-1}"
+alias gbc="git symbolic-ref --short HEAD"
+alias mr= "!sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -"
+
+## NPM
+alias ni="npm install";
+alias nrs="npm run start";
+alias nrd="npm run dev";
+alias nrl="npm run local";
+alias nr="npm run";
+alias flush-npm="rm -rf node_modules && npm i && echo NPM is done";
+
+## Other aliases
+alias zshrc='code ~/.zshrc'
+alias topten="history | awk '{print \$2}' | sort | uniq -c | sort -rn | head -10"
+alias myip="curl http://ipecho.net/plain; echo"
+alias dirs='dirs -v | head -10'
+alias usage='du -h -d1'
+alias update-zsh="source ~/.zshrc"
+alias sshdir="cd ~/.ssh"
+alias runp="lsof -i "
+alias md="mkdir "
+
+## Copilot
+alias copilot='gh copilot'
+alias gcs='gh copilot suggest'
+alias gce='gh copilot explain'
+
+# Scripts
+alias script-math="node scanScope.js --migrationName='textMathBlotMultilineSplit' && node migrateData.js --migrationName='textMathBlotMultilineSplit'"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+zmodload zsh/zprof
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+alias copilot="gh copilot"
+alias copilot="gh copilot"
+alias gce="gh copilot explain"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
